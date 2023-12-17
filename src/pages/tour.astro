@@ -1,54 +1,63 @@
 ---
 import Layout from '../components/Layout.astro';
 
-const dates = [
-	'December 17, 2023',
-	'December 18, 2023',
-	'December 19, 2023',
-	'December 20, 2023',
-	'December 21, 2023',
-	'December 22, 2023',
-	'December 23, 2023',
-	'December 24, 2023',
-	'December 25, 2023',
-	'December 26, 2023',
-	'December 27, 2023',
+const shows: Array<[date: string, venue: string, link: string | undefined]> = [
+	['December 17, 2023', "Wyrm's Lookout", 'https://youtu.be/CGW2GxTJmKI'],
+	['December 18, 2023', '[location redacted]', undefined],
+	['December 19, 2023', '[location redacted]', undefined],
+	['December 20, 2023', '[location redacted]', undefined],
+	['December 21, 2023', '[location redacted]', undefined],
+	['December 22, 2023', '[location redacted]', undefined],
+	['December 23, 2023', '[location redacted]', undefined],
+	['December 24, 2023', '[location redacted]', undefined],
+	['December 25, 2023', '[location redacted]', undefined],
+	['December 26, 2023', '[location redacted]', undefined],
+	['December 27, 2023', '[location redacted]', undefined],
 ];
 ---
 
 <Layout>
 	<header class="relative mx-auto my-10 flex max-w-lg flex-wrap items-center gap-8">
-		<hgroup class="grid w-fit flex-col justify-center text-right drop-shadow-xl">
-			<h1 class="text-center font-[Satisfy] text-4xl">Marky-Mark</h1>
-			<span class="font-['Indie_Flower']">and the Tadpoles</span>
-		</hgroup>
+		<a title="Home" href="/">
+			<hgroup class="grid w-fit flex-col justify-center text-right drop-shadow-xl">
+				<h1 class="text-center font-[Satisfy] text-4xl">Marky-Mark</h1>
+				<span class="font-['Indie_Flower']">and the Tadpoles</span>
+			</hgroup>
+		</a>
 
 		<nav class="flex flex-wrap gap-8 font-[changa]">
 			<a href="/" title="Home" class="underline">Home</a>
-			<a href="/" title="Live Dates" class="underline">Live Dates</a>
+			<a href="/tour" title="Tour Dates" class="underline">Live Dates</a>
 		</nav>
 	</header>
 	<main class="mx-auto max-w-xl font-['Changa']">
-		<div class="mx-auto w-fit bg-sky-100/80 p-4 text-gray-950">
-			<p class="mx-auto max-w-sm">
+		<div class="mx-auto flex gap-1 w-fit max-w-sm flex-col bg-sky-100/80 p-4 text-gray-950">
+			<p>
 				Announcing the <strong>Baldur's Gate Winter Tour!</strong>
 			</p>
-			<p class="mx-auto max-w-sm">
-				We're heading to venues ALL OVER the city playing shows NEAR YOU!
-			</p>
+			<p>We're heading to venues ALL OVER the city playing shows NEAR YOU!</p>
+			<p>Keep an eye out as we announce more locations!</p>
 		</div>
 		<section class="my-8 grid justify-center">
 			<h2 class="text-2xl">Upcoming Shows</h2>
 			<ul class="my-4 grid gap-4 p-4">
 				{
-					dates.map((date) => (
+					shows.map(([date, venue, link]) => (
 						<li>
 							<time class="text-gray-400">{date}</time>
 							<div class="flex gap-3">
-								<span class="font-mono font-bold">[location redacted]</span>
-								<span class="cursor-not-allowed bg-gray-100 px-2 text-gray-900 hover:bg-gray-300">
-									Sold out
-								</span>
+								<span class="font-mono font-bold">{venue}</span>
+								{link ? (
+									<a
+										href={link}
+										class="bg-gray-100 px-2 text-gray-900 hover:bg-gray-300">
+										Buy Tickets
+									</a>
+								) : (
+									<span class="cursor-not-allowed bg-gray-100 px-2 text-gray-900 hover:bg-gray-300">
+										Sold out
+									</span>
+								)}
 							</div>
 						</li>
 					))
