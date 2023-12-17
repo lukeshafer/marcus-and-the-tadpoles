@@ -1,16 +1,72 @@
 ---
-
+import Layout from '../components/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+	<header class="relative mx-auto my-10 max-w-lg">
+		<p class="my-4 font-['Changa'] lowercase">Introducing</p>
+		<hgroup class="grid w-full flex-col justify-center text-right drop-shadow-xl">
+			<h1 class="text-center font-[Satisfy] text-8xl">Marky-Mark</h1>
+			<span class="font-['Indie_Flower'] text-3xl">and the Tadpoles</span>
+		</hgroup>
+	</header>
+
+	<nav class="mx-auto w-fit py-6">
+		<h2 class="text-center font-['Changa'] text-xl">Announcing</h2>
+		<a
+			href="/tour"
+			title="Tour Dates"
+			class="block bg-sky-200 p-4 font-['Changa'] text-2xl text-black">
+			<div>The Baldur's Gate Winter Tour!</div>
+			<div class="text-sm">Click to Learn More</div>
+		</a>
+	</nav>
+
+	<main class="mx-auto max-w-xl bg-gray-50/10 p-8">
+		<h2 class="font-['Changa'] text-xl">Featuring</h2>
+		<ul class="grid gap-5 font-['Changa'] text-3xl text-gray-300">
+			<li class="bg-black/40 p-2">
+				<span class="text-teal-500">Marcus</span> "Marky Mark" Everystar
+			</li>
+			<li class="bg-black/40 p-2">
+				<span class="text-emerald-500">Shadowheart</span> the Cleric and Marcus's Goth GF
+			</li>
+			<li class="bg-black/40 p-2">
+				<span class="text-red-500">Karlach</span> the "Running Hot" Barbarian
+			</li>
+			<li class="bg-black/40 p-2">
+				<span class="text-amber-500">Wyll</span> "Well Met" Ravengard
+			</li>
+			<li class="bg-black/40 p-2">
+				<span class="text-gray-500">Lae'zel</span> who Will Murder You
+			</li>
+			<li class="bg-black/40 p-2">
+				<span class="text-fuchsia-500">Astarion</span> obviously a Vampire
+			</li>
+			<li class="bg-black/40 p-2 text-purple-500">Gale</li>
+			<li class="bg-black/40 p-2">
+				<span class="text-green-500">Halsin</span> the frequent Bear and sometimes Druid
+			</li>
+		</ul>
+	</main>
+
+	<footer class="p-8">
+		<a class="font-mono text-sm underline" href="https://youtube.com/lil_indigestion"
+			>youtube.com/lil_indigestion</a
+		>
+	</footer>
+</Layout>
+
+<style>
+	h1 {
+		text-shadow: 5px 5px 0px theme('colors.teal.700');
+	}
+
+	.border-brush {
+		overflow: visible;
+		background-image: url('brush-stroke.png');
+		backdrop-filter: hue-rotate(120deg);
+		background-size: 100% 190%;
+		background-position: center;
+	}
+</style>

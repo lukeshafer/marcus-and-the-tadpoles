@@ -1,0 +1,24 @@
+<html lang="en" class="bg-teal-950 text-stone-50">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Changa&family=Courgette&family=Indie+Flower&family=Satisfy&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Marky-Mark and the Tadpoles</title>
+	</head>
+	<body class="mx-4 overflow-x-hidden">
+		<div class="fixed inset-0 -z-10 h-screen overflow-hidden" aria-hidden="true">
+			<img
+				src="/marcus-4.png"
+				class="absolute inset-0 -z-10 h-auto min-h-screen w-[150vw] object-cover opacity-70 brightness-[10%]"
+			/>
+		</div>
+		<slot />
+	</body>
+</html>
