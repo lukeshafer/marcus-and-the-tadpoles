@@ -7,13 +7,19 @@ const shows: Array<[date: string, venue: string, link: string | undefined]> = [
 	['December 19, 2023', 'The Astral Prism Again', 'https://youtu.be/uB7pdIBIjfk'],
 	['December 20, 2023', "Arfur's Basement", 'https://youtu.be/8W_BY1toEPs'],
 	['December 21, 2023', 'Circus of the Last Days', 'https://youtu.be/dbnV6ba4Trg'],
-	['December 22, 2023', '[location redacted]', undefined],
-	['December 23, 2023', '[location redacted]', undefined],
-	['December 24, 2023', '[location redacted]', undefined],
-	['December 25, 2023', '[location redacted]', undefined],
-	['December 26, 2023', '[location redacted]', undefined],
-	['December 27, 2023', '[location redacted]', undefined],
-	['December 28, 2023', '[location redacted]', undefined],
+	[
+		'December 22, 2023',
+		'Circus of the Last Days, Featuring "Dribbles" the "Clown"',
+		'https://youtu.be/XfuFazPE5-c',
+	],
+	['December 23, 2023', 'Open Hand Temple', 'https://youtu.be/EMLRkaeLVdM'],
+	['December 24, 2023', 'Camp', 'https://youtu.be/D818nX8YmOo'],
+	['December 25, 2023', 'Underneath the Open Hand Temple', 'https://youtu.be/rNqeXLJbZQQ'],
+	['December 29, 2023', "Fraygo's Flophouse", 'https://youtu.be/FSTm5io802M'],
+	['December 30, 2023', "Sharess' Caress", 'https://youtu.be/ZyU1kDDwfaI'],
+	['December 31, 2023', "The Devil's Den", 'https://youtu.be/0RryJtmJs1E'],
+	['January 1, 2023', "The Shoppes of Wyrm's Crossing", 'https://youtu.be/isOlVeOpkLc'],
+	['January 2, 2023', 'Rivington Refugee Camp', 'https://youtu.be/1XFQaswp4Vo'],
 ];
 ---
 
@@ -40,18 +46,18 @@ const shows: Array<[date: string, venue: string, link: string | undefined]> = [
 			<p>Keep an eye out as we announce more locations!</p>
 		</div>
 		<section class="my-8 grid justify-center">
-			<h2 class="text-2xl">Upcoming Shows</h2>
+			<h2 class="text-2xl">Shows</h2>
 			<ul class="my-4 grid gap-4 p-4">
 				{
 					shows.map(([date, venue, link]) => (
 						<li>
 							<time class="text-gray-400">{date}</time>
 							<div class="flex gap-3">
-								<span class="font-mono font-bold">{venue}</span>
+								<span class="font-mono font-bold block max-w-xs">{venue}</span>
 								{link ? (
 									<a
 										href={link}
-										class="bg-gray-100 px-2 text-gray-900 hover:bg-gray-300">
+										class="bg-gray-100 px-2 text-gray-900 hover:bg-gray-300 h-min self-center">
 										Buy Tickets
 									</a>
 								) : (
